@@ -40,7 +40,7 @@
     <div class="page-header-inner ">
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-            <a href="{{url('/')}}"> <img src="/assets/images/logo.png" alt="logo" class="logo-default" /> </a>
+            <a href="{{url('/')}}"> </a>
             <div class="menu-toggler sidebar-toggler">
                 <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
             </div>
@@ -361,7 +361,7 @@
 <!-- END CONTAINER -->
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
-    <div class="page-footer-inner"> Copyright &copy; 2017 - 2019 <a href="https://github.com/ssrpanel/ssrpanel" target="_blank">SSRPanel</a> {{config('version.name')}} </div>
+    <div class="page-footer-inner"> Copyright &copy; 2020 - 20++ <a href="https://777yun.top" target="_blank">蜂巢3.0</a> {{config('version.name')}} </div>
     <div class="scroll-to-top">
         <i class="icon-arrow-up"></i>
     </div>
