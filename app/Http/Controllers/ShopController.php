@@ -35,7 +35,7 @@ class ShopController extends Controller
         if ($request->isMethod('POST')) {
             $this->validate($request, [
                 'name'    => 'required',
-                'traffic' => 'required_unless:type,3|integer|min:1024|max:10240000|nullable',
+                'traffic' => 'required_unless:type,3|integer|min:1024|max:10240000000000|nullable',
                 'price'   => 'required|numeric|min:0',
                 'type'    => 'required',
                 'days'    => 'required|integer',
@@ -44,7 +44,7 @@ class ShopController extends Controller
                 'traffic.required_unless' => '请填入流量',
                 'traffic.integer'         => '内含流量必须是整数值',
                 'traffic.min'             => '内含流量不能低于1MB',
-                'traffic.max'             => '内含流量不能超过10TB',
+                'traffic.max'             => '内含流量不能超过100TB',
                 'price.required'          => '请填入价格',
                 'price.numeric'           => '价格不合法',
                 'price.min'               => '价格最低0',
@@ -59,8 +59,8 @@ class ShopController extends Controller
             }
 
             // 套餐有效天数必须大于90天
-            if ($request->type == 2 && $request->days < 90) {
-                return Redirect::back()->withInput()->withErrors('套餐有效天数必须不能少于90天');
+            if ($request->type == 2 && $request->days < 1) {
+                return Redirect::back()->withInput()->withErrors('套餐有效天数必须不能少于1天');
             }
 
             // 商品LOGO
